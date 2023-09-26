@@ -8,7 +8,7 @@
 // @match        http://*/*
 // @match        file:///*
 // @icon         https://qalxry.github.io/img/fluid.jpg
-// @license      GPL-3.0
+// @license      AGPL-3.0
 // @run-at       document-idie
 // @grant none
 // ==/UserScript==
