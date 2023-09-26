@@ -1,34 +1,43 @@
-# Master of Focus 专注大师
+# Master of Focus
 
-## 介绍
+## Introduction
 
-这个油猴脚本的目的是帮助用户专注在学习上,避免浏览娱乐类网站导致分心。
+The purpose of this Greasemonkey script is to help users stay focused on their studies and avoid distractions from browsing entertainment websites.
 
-它的主要功能是:
+Its main features include:
 
-- 检测当前浏览的网站是否在黑名单/白名单里
-- 如果不在允许名单里,则用半透明页面覆盖当前页面,并弹出提示框
-- 提示框提示用户不要浏览娱乐网站,专心学习
-- 提供关闭当前网页的按钮
-- 提供承诺这是学习网站的按钮,可放行当前网站
+- Detecting whether the currently browsed website is on a blacklist/whitelist.
+  
+- If it's not on the allowed list, it overlays the current page with a semi-transparent layer and displays a prompt.
 
-## 用法
+- The prompt reminds the user not to visit entertainment websites and to concentrate on their studies.
 
-1. 安装油猴插件(Tampermonkey等)
-2. 新建脚本,粘贴本项目的代码
-3. 按需修改黑名单/白名单
-4. 浏览网页时生效
+- It provides a button to close the current webpage.
 
-## 配置
+- It offers a button to confirm that the current website is for studying, allowing access.
 
-- `mode` - 使用黑名单("blacklist")还是白名单("whitelist")
-- `blacklist` - 列出禁止访问的网站
-- `whitelist` - 列出允许访问的网站
+## Usage
 
-## 作者
+1. Install a browser extension like Tampermonkey.
 
-ShizuriYuki(or Qalxry)
+2. Create a new script and paste the code from this project.
 
-## 版权
+3. Customize the blacklist/whitelist as needed.
+
+4. The script will take effect while browsing webpages.
+
+## Configuration
+
+- Mode: Choose between using a blacklist ("blacklist") or a whitelist ("whitelist").
+
+- Blacklist: List websites that are not allowed.
+
+- Whitelist: List websites that are allowed.
+
+## Author
+
+ShizuriYuki (or Qalxry)
+
+## License
 
 GPL-3.0
