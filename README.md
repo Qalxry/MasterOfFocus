@@ -27,7 +27,7 @@
 
 ## 作者
 
-ShizuriYuki
+ShizuriYuki(or Qalxry)
 
 ## 版权
 
