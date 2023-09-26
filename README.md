@@ -6,7 +6,7 @@
 
 ## Introduction
 
-The purpose of this Greasemonkey script is to help users stay focused on their studies and avoid distractions from browsing entertainment websites.
+The purpose of this Tampermonkey script is to help users stay focused on their studies and avoid distractions from browsing entertainment websites.
 
 Its main features include:
 
