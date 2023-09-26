@@ -1,5 +1,7 @@
 # Master of Focus
 
+[简体中文](https://github.com/Qalxry/MasterOfFocus/blob/main/docs/README_zh.md)
+
 ## Introduction
 
 The purpose of this Greasemonkey script is to help users stay focused on their studies and avoid distractions from browsing entertainment websites.
