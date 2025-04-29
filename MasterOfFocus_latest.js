@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Master of Focus 专注大师
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  目前功能：如果检测到不是允许的网址，就将页面使用半透明页面覆盖，并弹出提示框提示不要浏览娱乐网站，专心学习！
 // @author       ShizuriYuki
 // @match        https://*/*
