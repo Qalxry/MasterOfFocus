@@ -241,7 +241,7 @@ function sleep(ms) {
         blurDiv.style.background = "rgba(0,0,0,0.5)";
         blurDiv.style.backdropFilter = "blur(20px)";
         blurDiv.style.color = "white";
-        blurDiv.style.fontSize = "30px";
+        blurDiv.style.fontSize = "20px";
         blurDiv.style.textAlign = "center";
         blurDiv.style.lineHeight = "100vh";
         document.body.appendChild(blurDiv);
@@ -255,7 +255,7 @@ function sleep(ms) {
         remindText.style.left = "50%";
         remindText.style.transform = "translate(-50%,-50%)";
         remindText.style.zIndex = "9999";
-        remindText.style.fontSize = "30px";
+        remindText.style.fontSize = "20px";
         remindText.style.color = "white";
         remindText.style.border = "none";
         remindText.style.outline = "none";
@@ -270,7 +270,7 @@ function sleep(ms) {
         closePageButton.style.left = "50%";
         closePageButton.style.transform = "translate(-50%,-50%)";
         closePageButton.style.zIndex = "9999";
-        closePageButton.style.fontSize = "30px";
+        closePageButton.style.fontSize = "20px";
         closePageButton.style.color = "white";
         closePageButton.style.background = "rgba(0,0,0,0.5)";
         closePageButton.style.border = "none";
