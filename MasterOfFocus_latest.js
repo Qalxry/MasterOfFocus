@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Master of Focus 专注大师
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      2.0
 // @description  目前功能：如果检测到不是允许的网址，就将页面使用半透明页面覆盖，并弹出提示框提示不要浏览娱乐网站，专心学习！
 // @author       ShizuriYuki
 // @match        https://*/*
@@ -148,63 +148,261 @@ function sleep(ms) {
 (function () {
     "use strict";
 
-    const mode = "whitelist"; // "blacklist" or "whitelist"
-    const blacklist = ["bilibili", "zhihu"];
-    const whitelist = [
-        "google",
-        "bing",
-        "csdn",
-        "github",
-        "cnblogs",
-        "luogu",
-        "codeforces",
-        "leetcode",
-        "stackoverflow",
-        "wikipedia",
-        "runoob",
-        "cppreference",
-        "openai",
-        "118.190.20.162",
-        "acm",
-        "youdao",
-        "hnu.edu",
-        "chaoxing",
-        "xuetangx",
-        "mooc",
-        "icourse163",
-        "zhihuishu",
-        "microsoft",
-        "visualgo.net",
-        "dazi.kukuw.com",
-        "zlibrary",
-        "oi-wiki",
-        "as.vivo.com",
-        "graph.qq.com",
-        "w3school",
-        "oauth",
-        "mail.qq.com",
-        "pan.baidu.com",
-        "juejin",
-        "jianshu",
-        "blog",
-        "segmentfault",
-        "geeksforgeeks",
-        "pornhub",
-        "claude",
-        "geogebra",
-        "baike",
-        "gitee",
-        "gitlab",
-        "leetcode",
-        "vscode",
-        "openai",
-        "chatgpt",
-        "deepseek",
-        "claude",
-        "android",
-        "gemini",
-        "thebai",
+    const mode = "blacklist"; // "blacklist" or "whitelist"
+    const blacklist = [
+        // 娱乐网站
+        "bilibili.com",             // Bilibili 
+        "www.zhihu.com",            // 知乎
+        "douyin.com",               // 抖音
+        "tiktok.com",               // TikTok国际版
+        "weibo.com",                // 微博
+        "xiaohongshu.com",          // 小红书
+        "iqiyi.com",                // 爱奇艺
+        "youku.com",                // 优酷
+        "v.qq.com",                 // 腾讯视频
+        "mgtv.com",                 // 芒果TV
+        "netflix.com",              // Netflix
+        "youtube.com",              // YouTube
+        "twitch.tv",                // Twitch直播
+        "huya.com",                 // 虎牙直播
+        "douyu.com",                // 斗鱼直播
+        "kuaishou.com",             // 快手
+        "taobao.com",               // 淘宝
+        "jd.com",                   // 京东
+        "pinduoduo.com",            // 拼多多
+    
+        // 游戏平台
+        "steampowered.com",         // Steam
+        "epicgames.com",            // Epic
+        "nintendo.com",             // 任天堂
+        "playstation.com",          // PlayStation
+        "xbox.com",                 // Xbox
+        "blizzard.com",             // 暴雪
+        "origin.com",               // EA
+    
+        // 音乐/社交
+        "spotify.com",              // Spotify
+        "y.qq.com",                 // QQ音乐
+        "kugou.com",                // 酷狗
+        "kuwo.cn",                  // 酷我
+        "music.163.com",            // 网易云音乐
+        "yy.com",                   // YY语音
+        "discord.com",              // Discord
+        "reddit.com",               // Reddit
+        "9gag.com",                 // 9GAG
+        "instagram.com",            // Instagram
+        "facebook.com",             // Facebook
+        "twitter.com",              // Twitter
+        "tumblr.com",               // Tumblr
+        "pinterest.com",            // Pinterest
+    
+        // 小说/漫画
+        "zongheng.com",             // 纵横中文网（补充）
+        "qidian.com",               // 起点
+        "jjwxc.net",                // 晋江
+        "17k.com",                  // 17K
+        "xxsy.net",                 // 潇湘书院
+        "shuqi.com",                // 书旗小说
+        "gongzicp.com",             // 长佩文学网
+        "lofter.com",               // Lofter
+        "acfun.cn",                 // A站
+        "manhuagui.com",            // 漫画柜
+        "dmzj.com",                 // 动漫之家
+        "bcy.net",                  // 半次元
+        "sakura.moe",               // 樱花动漫（补全）
+        "mangadex.org",             // MangaDex（补充）
+        "moegirl",                  // 萌娘百科
+        "cycity",                   // 次元城动漫
+        "age.tv",                   // Age动漫
+        "agedm",                    // Age动漫
+    
+        // 新闻/综合
+        "sina.com.cn",              // 新浪
+        "sohu.com",                 // 搜狐
+        "ifeng.com",                // 凤凰网
+        "people.com.cn",            // 人民网
+        "xinhuanet.com",            // 新华网
+        "thepaper.cn",              // 澎湃新闻
+    
+        // 成人视频平台
+        "pornhub.com",              // PornHub
+        "xvideos.com",              // XVideos
+        "missav.com",               // MissAV
+        "javbus.com",               // JavBus
+        "jable.tv",                 // Jable
+        "xhamster.com",             // XHamster
+        "redtube.com",              // RedTube
+        "youporn.com",              // YouPorn
+        "brazzers.com",             // Brazzers
+        "tnaflix.com",              // TNAFlix
+        "spankbang.com",            // SpankBang
+        "beeg.com",                 // Beeg
+        "bellesaplus.com",          // Bellesa
 
+        // 成人直播平台
+        "chaturbate.com",           // Chaturbate
+        "stripchat.com",            // StripChat
+        "myfreecams.com",           // MyFreeCams
+
+        // 成人内容订阅平台
+        "onlyfans.com",             // OnlyFans
+        "fansly.com",               // Fansly
+        "manyvids.com",             // ManyVids
+        "clips4sale.com",           // Clips4Sale
+
+        // 成人漫画/动画
+        "fakku.net",                // Fakku
+        "nhentai.net",              // NHentai
+        "hanime",                   // Hanime
+        "rule34.xxx",               // Rule34
+        "e-hentai.org",             // E-Hentai
+        "hentaihaven.xxx",          // HentaiHaven
+        "8muses.com",               // 8muses
+
+        // 二次元成人内容
+        "chan.sankakucomplex.com",  // Sankaku Complex
+        "gelbooru.com",             // Gelbooru
+        "danbooru.donmai.us",       // Danbooru
+        "pixiv.net",                // Pixiv（需配合R-18标签过滤）
+        "kemono.party",             // Kemono
+        "fantia.jp",                // Fantia
+
+        // 其他成人内容平台
+        "porndude.com",             // PornDude
+        "motherless.com",           // Motherless
+        "thothub.tv",               // ThotHub
+        "camwhores.tv",             // CamWhores
+        "literotica.com",           // Literotica
+        "ashemaletube.com",         // AShemaleTube
+        "f95zone.to",               // F95Zone
+    ];
+
+    const whitelist = [
+        // 搜索引擎
+        "google.com",           // Google
+        "bing.com",             // Bing
+    
+        // 编程与技术社区
+        "github",               // GitHub
+        "gitee",                // Gitee
+        "gitlab",               // GitLab
+        "stackoverflow",        // Stack Overflow
+        "segmentfault",         // SegmentFault
+        "geeksforgeeks",        // GeeksforGeeks
+        "leetcode",             // LeetCode
+        "codeforces",           // Codeforces
+        "luogu",                // 洛谷
+        "oi-wiki",              // OI Wiki
+        "visualgo",             // 算法可视化
+        "cppreference",         // C++ 参考文档
+    
+        // 学习平台与在线教育
+        ".edu",                 // 所有教育机构域名
+        "xuetangx.com",         // 学堂在线
+        "icourse163.org",       // 中国大学MOOC
+        "zhihuishu.com",        // 智慧树
+        "chaoxing.com",         // 超星
+        "mooc",                 // MOOC中国
+        "educoder",             // Educoder
+    
+        // 文档与教程
+        "docs.",                // 通用文档
+        "wikipedia.org",        // 维基百科
+        "baike.baidu.com",      // 百度百科
+        "cnki.net",             // CNKI
+        "wanfangdata.com.cn",   // 万方数据
+        "gitbook",              // GitBook
+        "runoob.com",           // 菜鸟教程
+        "w3school.com",         // W3School
+        "docs.microsoft.com",   // Microsoft Docs
+        "android.com",          // Android
+        "segmentfault.com",     // SegmentFault
+        "geeksforgeeks.org",    // GeeksforGeeks
+        "stackoverflow.com",    // Stack Overflow
+        "tutorialspoint.com",   // TutorialsPoint
+        "learn.microsoft.com",  // Microsoft Learn
+        "learnopengl.com",      // Learn OpenGL
+        "learncpp.com",         // Learn C++
+        "cplusplus.com",        // C++ Reference
+        "python",               // Python 文档
+        "numpy",                // NumPy
+        "pandas",               // Pandas
+        "scipy",                // SciPy
+        "matplotlib",           // Matplotlib
+        "tensorflow",           // TensorFlow
+        "keras",                // Keras
+        "pytorch",              // PyTorch
+        "scikit",               // Scikit-learn
+        "opencv",               // OpenCV
+        "flask",                // Flask
+        "django",               // Django REST Framework
+        "fastapi.tiangolo.com", // FastAPI
+        "vuejs",                // Vue.js
+        "reactjs",              // React
+        "angular.io",           // Angular
+        "jquery.com",           // jQuery
+        "bootstrap.com",        // Bootstrap
+        "tailwindcss.com",      // Tailwind CSS
+        "sass-lang.com",        // Sass
+        "lesscss.org",          // Less
+        "typescriptlang.org",   // TypeScript
+        "nodejs.org",           // Node.js
+        "expressjs.com",        // Express.js
+        "mongodb.com",          // MongoDB
+        "redis.io",             // Redis
+        "postgresql.org",       // PostgreSQL
+        "mysql.com",            // MySQL
+        "sqlite.org",           // SQLite
+        "firebase.google.com",  // Firebase
+        "heroku.com",           // Heroku
+        "aws.amazon.com",       // AWS
+        "azure.microsoft.com",  // Azure
+        "googlecloud.com",      // Google Cloud
+        "digitalocean.com",     // DigitalOcean
+        "vultr.com",            // Vultr
+        "linode.com",           // Linode
+        "github.io",            // GitHub Pages
+        "gitlab.io",            // GitLab Pages
+        "bitbucket.io",         // Bitbucket Pages
+    
+        // AI 与数据科学
+        "openai",               // OpenAI
+        "chatgpt",              // ChatGPT
+        "deepseek",             // DeepSeek
+        "claude",               // Claude
+        "gemini",               // Google Gemini
+        "huggingface",          // Hugging Face
+        "kaggle",               // Kaggle
+        "qwen",                 // 通义千问
+        
+        // 云服务与存储
+        "pan.baidu.com",        // 百度网盘
+        "aliyun.com",           // 阿里云
+        "mail.qq.com",          // QQ邮箱
+        "docs.qq.com",          // 腾讯文档
+        "vscode.dev",           // VS Code Online
+        "cloud.google.com",     // Google Cloud Console
+        "aliyun.com",           // 阿里云
+        "volcengine.com",       // 火山引擎
+    
+        // 其他实用工具
+        "youdao.com",           // 有道词典
+        "geogebra.org",         // GeoGebra
+        "dazi.kukuw.com",       // 打字练习
+
+        // 技术博客与论坛
+        "csdn.net",             // CSDN
+        "cnblogs.com",          // 博客园
+        "juejin.cn",            // 掘金
+        "jianshu.com",          // 简书
+        "blog.dev",             // 开发者博客
+    
+        // 其他
+        "118.190.20.162",       // 内部IP
+        "as.vivo.com",          // vivo 互传
+        "graph.qq.com",         // QQ开放平台
+        "oauth",                // OAuth服务
+        "zlibrary",             // Z-Library
     ];
 
     function check_URL_in_list(list) {
