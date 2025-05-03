@@ -151,7 +151,7 @@ function sleep(ms) {
     const mode = "blacklist"; // "blacklist" or "whitelist"
     const blacklist = [
         // 娱乐网站
-        "bilibili.com",             // Bilibili 
+        "bilibili.com",             // Bilibili
         "www.zhihu.com",            // 知乎
         "douyin.com",               // 抖音
         "tiktok.com",               // TikTok国际版
@@ -170,7 +170,7 @@ function sleep(ms) {
         "taobao.com",               // 淘宝
         "jd.com",                   // 京东
         "pinduoduo.com",            // 拼多多
-    
+
         // 游戏平台
         "steampowered.com",         // Steam
         "epicgames.com",            // Epic
@@ -179,7 +179,7 @@ function sleep(ms) {
         "xbox.com",                 // Xbox
         "blizzard.com",             // 暴雪
         "origin.com",               // EA
-    
+
         // 音乐/社交
         "spotify.com",              // Spotify
         "y.qq.com",                 // QQ音乐
@@ -195,7 +195,7 @@ function sleep(ms) {
         "twitter.com",              // Twitter
         "tumblr.com",               // Tumblr
         "pinterest.com",            // Pinterest
-    
+
         // 小说/漫画
         "zongheng.com",             // 纵横中文网（补充）
         "qidian.com",               // 起点
@@ -215,7 +215,7 @@ function sleep(ms) {
         "cycity",                   // 次元城动漫
         "age.tv",                   // Age动漫
         "agedm",                    // Age动漫
-    
+
         // 新闻/综合
         "sina.com.cn",              // 新浪
         "sohu.com",                 // 搜狐
@@ -223,11 +223,11 @@ function sleep(ms) {
         "people.com.cn",            // 人民网
         "xinhuanet.com",            // 新华网
         "thepaper.cn",              // 澎湃新闻
-    
+
         // 成人视频平台
-        "pornhub.com",              // PornHub
-        "xvideos.com",              // XVideos
-        "missav.com",               // MissAV
+        "pornhub",                  // PornHub
+        "xvideos",                  // XVideos
+        "missav",                   // MissAV
         "javbus.com",               // JavBus
         "jable.tv",                 // Jable
         "xhamster.com",             // XHamster
@@ -245,25 +245,26 @@ function sleep(ms) {
         "myfreecams.com",           // MyFreeCams
 
         // 成人内容订阅平台
-        "onlyfans.com",             // OnlyFans
+        "onlyfans",                 // OnlyFans
         "fansly.com",               // Fansly
         "manyvids.com",             // ManyVids
         "clips4sale.com",           // Clips4Sale
 
         // 成人漫画/动画
         "fakku.net",                // Fakku
-        "nhentai.net",              // NHentai
+        "nhentai",                  // NHentai
         "hanime",                   // Hanime
-        "rule34.xxx",               // Rule34
+        "rule34",                   // Rule34
         "e-hentai.org",             // E-Hentai
         "hentaihaven.xxx",          // HentaiHaven
         "8muses.com",               // 8muses
 
         // 二次元成人内容
+        "hentai",                   // 二次元成人内容
         "chan.sankakucomplex.com",  // Sankaku Complex
         "gelbooru.com",             // Gelbooru
-        "danbooru.donmai.us",       // Danbooru
-        "pixiv.net",                // Pixiv（需配合R-18标签过滤）
+        "danbooru",                 // Danbooru
+        "pixiv",                    // Pixiv（需配合R-18标签过滤）
         "kemono.party",             // Kemono
         "fantia.jp",                // Fantia
 
@@ -281,7 +282,7 @@ function sleep(ms) {
         // 搜索引擎
         "google.com",           // Google
         "bing.com",             // Bing
-    
+
         // 编程与技术社区
         "github",               // GitHub
         "gitee",                // Gitee
@@ -295,7 +296,7 @@ function sleep(ms) {
         "oi-wiki",              // OI Wiki
         "visualgo",             // 算法可视化
         "cppreference",         // C++ 参考文档
-    
+
         // 学习平台与在线教育
         ".edu",                 // 所有教育机构域名
         "xuetangx.com",         // 学堂在线
@@ -304,7 +305,7 @@ function sleep(ms) {
         "chaoxing.com",         // 超星
         "mooc",                 // MOOC中国
         "educoder",             // Educoder
-    
+
         // 文档与教程
         "docs.",                // 通用文档
         "wikipedia.org",        // 维基百科
@@ -364,7 +365,7 @@ function sleep(ms) {
         "github.io",            // GitHub Pages
         "gitlab.io",            // GitLab Pages
         "bitbucket.io",         // Bitbucket Pages
-    
+
         // AI 与数据科学
         "openai",               // OpenAI
         "chatgpt",              // ChatGPT
@@ -374,7 +375,7 @@ function sleep(ms) {
         "huggingface",          // Hugging Face
         "kaggle",               // Kaggle
         "qwen",                 // 通义千问
-        
+
         // 云服务与存储
         "pan.baidu.com",        // 百度网盘
         "aliyun.com",           // 阿里云
@@ -384,7 +385,7 @@ function sleep(ms) {
         "cloud.google.com",     // Google Cloud Console
         "aliyun.com",           // 阿里云
         "volcengine.com",       // 火山引擎
-    
+
         // 其他实用工具
         "youdao.com",           // 有道词典
         "geogebra.org",         // GeoGebra
@@ -396,7 +397,7 @@ function sleep(ms) {
         "juejin.cn",            // 掘金
         "jianshu.com",          // 简书
         "blog.dev",             // 开发者博客
-    
+
         // 其他
         "118.190.20.162",       // 内部IP
         "as.vivo.com",          // vivo 互传
