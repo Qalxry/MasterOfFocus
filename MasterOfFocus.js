@@ -9,8 +9,10 @@
 // @match        file:///*
 // @icon         https://qalxry.github.io/img/fluid.jpg
 // @license      AGPL-3.0
-// @run-at       document-idie
-// @grant none
+// @run-at       document-idle
+// @grant        GM_registerMenuCommand
+// @grant        GM_setValue
+// @grant        GM_getValue
 // ==/UserScript==
 
 function printf(str, data) {
@@ -148,7 +150,7 @@ function sleep(ms) {
 (function () {
     "use strict";
 
-    const mode = "whitelist"; // "blacklist" or "whitelist"
+    const mode = GM_getValue("mode", "whitelist"); // "blacklist" or "whitelist"
     const blacklist = [
         // 娱乐网站
         "bilibili.com",             // Bilibili
@@ -630,4 +632,15 @@ function sleep(ms) {
             console.log(continueButton_click);
         }, 100);
     }
+
+    // 注册菜单命令
+    GM_registerMenuCommand("切换到黑名单模式", () => {
+        GM_setValue("mode", "blacklist");
+        alert("已切换到黑名单模式，请刷新页面以应用。");
+    });
+
+    GM_registerMenuCommand("切换到白名单模式", () => {
+        GM_setValue("mode", "whitelist");
+        alert("已切换到白名单模式，请刷新页面以应用。");
+    });
 })();
