@@ -148,7 +148,7 @@ function sleep(ms) {
 (function () {
     "use strict";
 
-    const mode = "blacklist"; // "blacklist" or "whitelist"
+    const mode = "whitelist"; // "blacklist" or "whitelist"
     const blacklist = [
         // 娱乐网站
         "bilibili.com",             // Bilibili
@@ -389,6 +389,7 @@ function sleep(ms) {
         // 其他实用工具
         "youdao.com",           // 有道词典
         "geogebra.org",         // GeoGebra
+        "desmos",               // Desmos
         "dazi.kukuw.com",       // 打字练习
 
         // 技术博客与论坛
@@ -404,6 +405,12 @@ function sleep(ms) {
         "graph.qq.com",         // QQ开放平台
         "oauth",                // OAuth服务
         "zlibrary",             // Z-Library
+        "porn",
+        "zhuanlan.zhihu.com",
+        "overleaf",             // OverLeaf Online LaTeX Editor
+        "latex",                // LaTeX
+        ".pdf",                 // PDF Documents
+        "microsoft",
     ];
 
     function check_URL_in_list(list) {
